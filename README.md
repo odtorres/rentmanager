@@ -1,4 +1,4 @@
-# rentManager
+# Rent Manager
 
 ## To Do
 1. home page for the client (search, show the business).
