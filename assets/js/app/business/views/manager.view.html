@@ -1,0 +1,34 @@
+<section class="ui container" ng-controller=ManagerController>
+    <general-menu></general-menu>
+    <div class="ui vertical stripe segment">
+        <!--div ng-repeat="manager in managers ">
+            {{manager.id}},{{manager.user}},{{manager.password}}, {{user}}...
+        </div-->
+        {{manager.firstName}}
+        {{manager.country}}
+    </div>
+    <div class="ui middle aligned animated list">
+        <div class="item" ng-repeat="business in manager.mybusiness">
+            <div class="ui segment">
+                <div class="content">
+                    <img class="ui medium centered rounded image" src="../images/wireframe/square-image.png">                    
+                </div>
+                <p class="header">Name of the business</p>
+                <p>I'm here to tell you something, and you will probably read me first.</p>
+
+                <div class="content">
+                    <i class="marker icon"></i> New York, NY
+                </div>
+                <div class="content">
+                    <i class="mail icon"></i>                    
+                    <a href="mailto:jack@semantic-ui.com">jack@semantic-ui.com</a>
+                </div>
+                <div class="content">
+                    <i class="linkify icon"></i>                    
+                    <a href="../index.html">semantic-ui.com</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

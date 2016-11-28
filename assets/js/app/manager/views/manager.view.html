@@ -1,0 +1,67 @@
+<section class="ui container" ng-controller=ManagerController>
+    <general-menu></general-menu>
+    <div class="ui vertical stripe segment">
+
+        <div class="content">
+            <img class="ui small rounded image" src="../images/wireframe/square-image.png">
+            <h2> {{manager.firstName}} {{manager.lastName}}</h2>
+            <div ng-if="manager.email==userInfo.email">
+                <i class="setting icon" ng-click="editAvatar()"></i>
+                <form action="/manager/uploadAvatar" enctype="multipart/form-data" method="post">
+                    <input type="text" name="id" value="{{manager.username}}"><br>
+                    <input type="file" name="avatar" id="avatar" multiple="multiple"><br>
+                    <input type="submit" value="Upload" ><!--ng-click="uploadAvatar()"-->
+                </form>
+            </div>
+        </div>
+
+        <div class="content">
+            <i class="mail icon"></i>
+            <a href="{{manager.email}}">{{manager.email}}</a>
+        </div>
+
+        <div class="content">
+            <i class="{{manager.lowerCountry}} flag"></i>
+            <a>{{manager.country}}</a>
+        </div>
+
+
+    </div>
+    <div class="ui middle aligned animated list">
+        <div class="item" ng-repeat="business in manager.mybusiness">
+            <div class="ui segment">
+                <a class="ui blue ribbon label"> {{business.type}} </a>
+                <div class="content">
+                    <img class="ui medium centered rounded image" src="../images/wireframe/square-image.png">
+                </div>
+                <p class="header">{{business.name}}</p>
+                <p> {{business.description}} </p>
+
+                <div class="content">
+                    <i class="marker icon"></i> {{business.country}},{{business.address}}
+                </div>
+                <div class="content">
+                    <i class="mail icon"></i>
+                    <a href="mailto:jack@semantic-ui.com">jack@semantic-ui.com</a>
+                </div>
+                <div class="content">
+                    <i class="linkify icon"></i>
+                    <a href="../index.html">semantic-ui.com</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<div class="ui modal">
+    <div class="header">Edit Avatar</div>
+    <div class="content">
+        <div id="uploader">
+    </div>
+    <div class="actions">
+        <div class="ui approve button">Approve</div>
+        <div class="ui button">Neutral</div>
+        <div class="ui cancel button">Cancel</div>
+    </div>
+</div>

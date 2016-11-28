@@ -1,0 +1,18 @@
+<div class="ui two column centered grid">
+    <div class="column">
+<form class="ui form segment" ng-controller="AuthenticationController" method="Post" action="/authentication/login">
+    <h2>Sign in </h2>    
+    <div class="field">
+        <label>User</label>
+        <input placeholder="User" name="username" id="username" type="text">
+    </div>
+    <div class="field">
+        <label>Password</label>
+        <input placeholder="Password" name="password" id="password" type="password">
+    </div>
+    <!--<div class="ui blue submit button" ng-click="submit()" id="submit">Accept</div>-->
+    <button class="ui blue submit button" type="submit" id="submit">Accept</button>
+    <div class="ui error message"></div>
+</form>
+</div>
+</div>
